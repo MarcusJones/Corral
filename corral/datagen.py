@@ -1,3 +1,4 @@
+from tensorflow.python import keras as ks
 # %% DATAGEN
 class MuleDataGenerator(ks.utils.Sequence):
     """Generates data for Keras"""

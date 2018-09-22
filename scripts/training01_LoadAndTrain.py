@@ -1,12 +1,16 @@
+import glob
+import os
+#%%
 """
 Manage and analyze the Data Set directory.
 Iterate over each Data Set and check which data elements have been created. 
 
-NOT Standalone script. 
-
 """
+from corral.dataset import AIDataSet
+from corral.datagen import MuleDataGenerator
+from corral.utilities import NoPlots
+from corral.plotter import DataSetPlotter
 #%% Instantiate and load the dataset
-
 LOCAL_PROJECT_PATH = glob.glob(os.path.expanduser('~/MULE DATA'))[0]
 DATASET_ID = "20180907 184100 BENCHMARK1 TRG"
 DATASET_ID = "20180910 202846 AUTO"

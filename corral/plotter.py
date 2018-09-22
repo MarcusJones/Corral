@@ -1,11 +1,11 @@
-
+import matplotlib.pyplot as plt
 # %% Plotter
 class DataSetPlotter:
     def __init__(self):
         pass
 
     def boxplots_time(self ,dataset):
-        fi g =plt.figure(figsize=PAPER_A4_LAND ,facecolor='white')
+        fig =plt.figure(figsize=PAPER_A4_LAND ,facecolor='white')
         fig, axes = plt.subplots(figsize=PAPER_A4_LAND ,facecolor='white' ,nrows=1, ncols=3)
 
         median = dataset.df['ts_deltas_ms'].median()

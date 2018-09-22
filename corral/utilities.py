@@ -12,7 +12,7 @@ import numpy as np
 #import glob
 #import matplotlib
 import math
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 #import matplotlib.image as mpimg
 #import datetime
 #import tensorflow as tf
@@ -66,11 +66,13 @@ import cv2
 #%%
 class NoPlots:
     def __enter__(self):
-        get_ipython().run_line_magic('matplotlib', 'qt')
-        plt.ioff()
+        pass
+        #get_ipython().run_line_magic('matplotlib', 'qt')
+        #plt.ioff()
     def __exit__(self, type, value, traceback):
-        get_ipython().run_line_magic('matplotlib', 'inline')
-        plt.ion()
+        pass
+        #get_ipython().run_line_magic('matplotlib', 'inline')
+        #plt.ion()
 
 
 #%% Logging
@@ -144,9 +146,12 @@ def remove_outliers(this_series):
 
 def mm2inch(value):
     return value/25.4
-PAPER_A3_LAND = (mm2inch(420),mm2inch(297))
-PAPER_A4_LAND = (mm2inch(297),mm2inch(210))
-PAPER_A5_LAND = (mm2inch(210),mm2inch(148))
+PAPER = {
+    PAPER_A3_LAND : (mm2inch(420),mm2inch(297))
+    PAPER_A4_LAND : (mm2inch(297),mm2inch(210))
+    PAPER_A5_LAND : (mm2inch(210),mm2inch(148))
+}
+
 #%%
     
 
