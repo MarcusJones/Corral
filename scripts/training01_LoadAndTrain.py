@@ -119,7 +119,6 @@ dsm.instantiate_generators(MuleDataGenerator)
 dsm.instantiate_model(model_name="baseline_steering_model")
 
 dsm.model.summary()
-#raise
 dsm.instantiate_callbacks()
 dsm.callback_list
 dsm.train_model(2)
