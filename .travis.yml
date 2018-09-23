@@ -2,6 +2,9 @@ language: python
 python:
   - 3.6
 install:
+  # Could include a line to pip install the requirements.txt
+  # and create the environment.yml automatically
+
   - sudo apt-get update
   - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
   - bash miniconda.sh -b -p $HOME/miniconda
@@ -17,6 +20,9 @@ install:
   # - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION dep1 dep2 ...
   - source activate muleai
   # - python setup.py install
-
+  - pip install -U tox-travis
 # script:
   # Your test script goes here
+
+script: tox
+
