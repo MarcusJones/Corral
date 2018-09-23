@@ -14,6 +14,7 @@ from corral.datagen import MuleDataGenerator
 from corral.utilities import NoPlots
 from corral.plotter import DataSetPlotter
 from tensorflow.python import keras as ks
+from corral.trained_dataset import ModelledData
 #%% Instantiate and load the dataset
 LOCAL_PROJECT_PATH = glob.glob(os.path.expanduser('~/MULE DATA'))[0]
 DATASET_ID = "20180907 184100 BENCHMARK1 TRG"
@@ -126,8 +127,9 @@ dsm.model.summary()
 #raise
 dsm.instantiate_callbacks()
 dsm.callback_list
-dsm.train_model(50)
-dsm.make_predictions()
+if 0:
+    dsm.train_model(50)
+    dsm.make_predictions()
 
 
 #%% TEST GEN

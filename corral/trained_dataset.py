@@ -1,4 +1,7 @@
-
+import os
+from tensorflow.python import keras as ks
+import logging
+import numpy as np
 # %%
 
 class ModelledData():
@@ -81,7 +84,7 @@ class ModelledData():
         return 'steering_pred_signal' in self.ds.df.columns
 
     def generate_partitions(self, split=0.8):
-        logging.debug("Partitioning  train/val to {:0.0f}/{:0.0f}%".format(spli t *100, ( 1 -split ) *100))
+        logging.debug("Partitioning  train/val to {:0.0f}/{:0.0f}%".format(split *100, ( 1 -split ) *100))
 
         # The split mask
         msk = np.random.rand(len(self.ds.df)) < split
@@ -165,7 +168,7 @@ class ModelledData():
 
     def instantiate_callbacks(self):
         # Save checkpoint
-        weight_filenam e ="weights Loss {val_loss:.2f} Epoch {epoch:02d}.h5"
+        weight_filename ="weights Loss {val_loss:.2f} Epoch {epoch:02d}.h5"
         weight_path = os.path.join(self.path_model_dir ,weight_filename)
         callback_wts = ks.callbacks.ModelCheckpoint(weight_path,
                                                     monitor='val_loss',
@@ -299,7 +302,7 @@ class ModelledData():
 
         self.raw_accuracy =  sum(self.ds.df[self.ds.mask]['steering_signal_catnum'] == self.ds.df[self.ds.mask]
             ['steering_pred_signal_catnum'] ) /len(self.ds.df[self.ds.mask])
-        logging.debug("Raw accuracy {:0.2f}%".format(self.raw_accurac y *100))
+        logging.debug("Raw accuracy {:0.2f}%".format(self.raw_accuracy *100))
 
         # return predictions
 
