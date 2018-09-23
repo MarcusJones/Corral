@@ -147,9 +147,9 @@ def remove_outliers(this_series):
 def mm2inch(value):
     return value/25.4
 PAPER = {
-    PAPER_A3_LAND : (mm2inch(420),mm2inch(297))
-    PAPER_A4_LAND : (mm2inch(297),mm2inch(210))
-    PAPER_A5_LAND : (mm2inch(210),mm2inch(148))
+    "PAPER_A3_LAND" : (mm2inch(420),mm2inch(297)),
+    "PAPER_A4_LAND" : (mm2inch(297),mm2inch(210)),
+    "PAPER_A5_LAND" : (mm2inch(210),mm2inch(148)),
 }
 
 #%%

@@ -1,15 +1,19 @@
-import glob
-import os
+
 #%%
 """
 Manage and analyze the Data Set directory.
 Iterate over each Data Set and check which data elements have been created. 
 
 """
+import glob
+import os
+import datetime
+from corral.utilities import LoggerCritical
 from corral.dataset import AIDataSet
 from corral.datagen import MuleDataGenerator
 from corral.utilities import NoPlots
 from corral.plotter import DataSetPlotter
+from tensorflow.python import keras as ks
 #%% Instantiate and load the dataset
 LOCAL_PROJECT_PATH = glob.glob(os.path.expanduser('~/MULE DATA'))[0]
 DATASET_ID = "20180907 184100 BENCHMARK1 TRG"

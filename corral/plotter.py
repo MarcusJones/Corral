@@ -1,12 +1,15 @@
 import matplotlib.pyplot as plt
+import logging
+import os
+from corral.utilities import PAPER, remove_outliers
 # %% Plotter
 class DataSetPlotter:
     def __init__(self):
         pass
 
     def boxplots_time(self ,dataset):
-        fig =plt.figure(figsize=PAPER_A4_LAND ,facecolor='white')
-        fig, axes = plt.subplots(figsize=PAPER_A4_LAND ,facecolor='white' ,nrows=1, ncols=3)
+        fig =plt.figure(figsize=PAPER["PAPER_A4_LAND"] ,facecolor='white')
+        fig, axes = plt.subplots(figsize=PAPER["PAPER_A4_LAND"] ,facecolor='white' ,nrows=1, ncols=3)
 
         median = dataset.df['ts_deltas_ms'].median()
         hertz = 1/ (median / 1000)
@@ -38,9 +41,10 @@ class DataSetPlotter:
         outpath = os.path.join(dataset.path_dataset, 'Timestep analysis.png')
         fig.savefig(outpath)
         logging.debug("Wrote boxplots_time figure to {}".format(outpath))
+        return fig
 
     def histogram_steering(self, dataset):
-        fig = plt.figure(figsize=PAPER_A5_LAND, facecolor='white')
+        fig = plt.figure(figsize=PAPER["PAPER_A5_LAND"], facecolor='white')
         hist_steering = dataset.df['steering_signal'].hist()
 
         title_str = "Histogram of steering signals"
@@ -57,7 +61,7 @@ class DataSetPlotter:
         logging.debug("Wrote histogram_steering figure to {}".format(outpath))
 
     def histogram_throttle(self, dataset):
-        fig = plt.figure(figsize=PAPER_A5_LAND, facecolor='white')
+        fig = plt.figure(figsize=PAPER["PAPER_A5_LAND"], facecolor='white')
         hist_throttle = dataset.df['throttle_signal'].hist()
         title_str = "Histogram of throttle signals"
         subtitle_str = "Dataset: {}, {} records over {:0.1f} minutes ".format(dataset.data_folder, dataset.num_records,
