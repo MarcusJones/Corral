@@ -1,5 +1,6 @@
 import os
 from tensorflow.python import keras as ks
+from corral.utilities import LoggerCritical
 import logging
 import numpy as np
 # %%

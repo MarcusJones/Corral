@@ -8,10 +8,9 @@ Iterate over each Data Set and check which data elements have been created.
 import glob
 import os
 import datetime
-from corral.utilities import LoggerCritical
+from corral.utilities import LoggerCritical, NoPlots
 from corral.dataset import AIDataSet
 from corral.datagen import MuleDataGenerator
-from corral.utilities import NoPlots
 from corral.plotter import DataSetPlotter
 from tensorflow.python import keras as ks
 from corral.trained_dataset import ModelledData
@@ -127,9 +126,8 @@ dsm.model.summary()
 #raise
 dsm.instantiate_callbacks()
 dsm.callback_list
-if 0:
-    dsm.train_model(50)
-    dsm.make_predictions()
+dsm.train_model(2)
+dsm.make_predictions()
 
 
 #%% TEST GEN
