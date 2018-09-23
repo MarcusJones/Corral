@@ -15,14 +15,13 @@ install:
   # Useful for debugging any issues with conda
   - conda info -a
 
-  # Replace dep1 dep2 ... with your dependencies
+  # Install the environment
   - conda env create --file environment.yml --name muleai
   # - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION dep1 dep2 ...
   - source activate muleai
   # - python setup.py install
   - pip install -U tox-travis
-# script:
-  # Your test script goes here
+  - conda install virtualenv # This is to ensure that tox finds the venv
 
 script: tox
 
