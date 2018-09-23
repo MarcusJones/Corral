@@ -1,14 +1,14 @@
 # Standard library
-import os
-import logging
-import re
 import datetime
-import zipfile
 import json
+import logging
+import os
+import re
+import zipfile
 
 # Third party
-import pandas as pd
 import numpy as np
+import pandas as pd
 
 # Local
 

@@ -28,7 +28,6 @@ setup(
         'Programming Language :: Python :: 3.6',
     ],
     description="Corral - Training for RC autonomous driving",
-    install_requires=requirements,
     license="Apache Software License 2.0",
     long_description=readme,
     long_description_content_type="text/markdown",

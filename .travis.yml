@@ -24,4 +24,13 @@ install:
   - conda install virtualenv # This is to ensure that tox finds the venv
 
 script: tox
-
+deploy:
+  provider: pypi
+  distributions: sdist bdist_wheel
+  user: ${PYPI_USER}
+  password: ${PYPI_PASSWORD}
+  on:
+    tags: true
+    branch: master
+    repo: MarcusJones/corral
+    python: 3.7
