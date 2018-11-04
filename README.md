@@ -14,13 +14,16 @@ Flexible masking (cleaning) of data set by;
 
 `DataSet.mask_last_Ns()` 
 
+
 `DataSet.mask_null_throttle()`
+
 ```
 Masked 459 timesteps throttle<0.1, current cover: 7.8%
 Masked 6181 timesteps from 2018-09-12 16:23:26.186000 to 2018-09-12 16
 ```
  * Start - stop keyframe markers (datetime stamps)
  * State values i.e. throttle < 0.1
+
 ## **Plotter** class
    * Operates on DataSet to plot summary histograms, charts etc.
    test* Operates on DataSet to generate analysis frames with a HUD overlay
